@@ -64,4 +64,4 @@ http://localhost:8888/laravel-curd/public/index.php
 
 如果出现以下页面，则安装成功，您就可以开始 Laravel 的学习之旅啦！
 
-![curd.png](http://www.mayanlong.com/usr/uploads/2016/09/1625446115.png)
+![curd.png](http://www.mayanlong.com/usr/uploads/2016/09/2597904246.gif)
