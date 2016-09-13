@@ -34,7 +34,7 @@ class StudentController extends Controller
 
         //$students = Student::paginate(3);
         //$students = Student::where('age', '>', 11)->paginate(3);
-        $students = Student::whereRaw(implode('and', $conditions), $params)->paginate(5);
+        $students = Student::whereRaw(implode('and', $conditions), $params)->paginate(4);
 
         return view('student.index', [
             'students' => $students,
