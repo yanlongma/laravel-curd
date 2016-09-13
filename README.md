@@ -4,6 +4,8 @@
 
 [代码下载：https://github.com/yanlongma/laravel-curd](https://github.com/yanlongma/laravel-curd)
 
+[原文链接：http://www.mayanlong.com/archives/2016/252.html](http://www.mayanlong.com/archives/2016/252.html)
+
 Laravel 开发交流群（521295157），欢迎加入！
 
 [ Laravel 系列视频教程：http://www.mayanlong.com/laravel.html](http://www.mayanlong.com/laravel.html)
@@ -28,7 +30,7 @@ DB_PASSWORD=root
 
 首先创建一个数据库 laravel，然后再创建数据表。
 
-2.1. 使用 Laravel 的迁移创建数据表
+2.1 使用 Laravel 的迁移创建数据表
 
 ```
 php artisan migrate
