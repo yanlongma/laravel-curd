@@ -1,6 +1,6 @@
 # 简介：
 
-一个 laravel5.3 curd 的 demo！
+一个 Laravel 5.3 curd 的 demo！
 
 Laravel 开发交流群（521295157），欢迎加入！
 
