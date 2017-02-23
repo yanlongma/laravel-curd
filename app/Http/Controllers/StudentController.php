@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+
 
 /**
  * Student 控制器
@@ -83,6 +86,10 @@ class StudentController extends Controller
                 'Student.age' => '年龄',
                 'Student.sex' => '性别',
             ]);
+
+            // PHP 中打印错误信息
+            // dd($validator->errors()->first());exit;
+            // dd($validator->errors());exit;
 
             if ($validator->fails()) {
                 return redirect()->back()->withErrors($validator)->withInput();
