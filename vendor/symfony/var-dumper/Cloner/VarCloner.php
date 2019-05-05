@@ -183,13 +183,10 @@ class VarCloner extends AbstractCloner
 
                     case 'resource':
                     case 'unknown type':
-                    case 'resource (closed)':
                         if (empty($resRefs[$h = (int) $v])) {
                             $stub = new Stub();
                             $stub->type = Stub::TYPE_RESOURCE;
-                            if ('Unknown' === $stub->class = $zval['resource_type'] ?: @get_resource_type($v)) {
-                                $stub->class = 'Closed';
-                            }
+                            $stub->class = $zval['resource_type'] ?: get_resource_type($v);
                             $stub->value = $v;
                             $stub->handle = $h;
                             $a = $this->castResource($stub, 0 < $i);

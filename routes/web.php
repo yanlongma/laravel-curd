@@ -12,13 +12,13 @@
 */
 
 Route::get('/', function () {
-    return redirect('student/index');
+    return redirect('student/lists');
 });
 
 
 Route::group(['middleware' => ['web']], function () {
 
-    Route::get('student/index', ['uses' => 'StudentController@index']);
+    Route::get('student/lists', ['uses' => 'StudentController@lists']);
     Route::any('student/create', ['uses' => 'StudentController@create']);
     Route::any('student/save', ['uses' => 'StudentController@save']);
     Route::any('student/update/{id}', ['uses' => 'StudentController@update']);

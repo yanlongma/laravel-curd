@@ -18,7 +18,7 @@ class StudentController extends Controller
 {
 
     // 学生列表
-    public function index(Request $request)
+    public function lists(Request $request)
     {
 
         $conditions = [' 1=1 '];
@@ -39,7 +39,7 @@ class StudentController extends Controller
         //$students = Student::where('age', '>', 11)->paginate(3);
         $students = Student::whereRaw(implode('and', $conditions), $params)->paginate(4);
 
-        return view('student.index', [
+        return view('student.lists', [
             'students' => $students,
         ]);
     }
@@ -100,7 +100,7 @@ class StudentController extends Controller
 
             // 使用批量赋值新增
             if (Student::create($data) ) {
-                return redirect('student/index')->with('success', '添加成功!');
+                return redirect('student/lists')->with('success', '添加成功!');
             } else {
                 return redirect()->back();
             }
@@ -123,7 +123,7 @@ class StudentController extends Controller
         $student->sex = $data['sex'];
 
         if ($student->save()) {
-            return redirect('student/index');
+            return redirect('student/lists');
         } else {
             return redirect()->back();
         }
@@ -159,7 +159,7 @@ class StudentController extends Controller
             $student->sex = $data['sex'];
 
             if ($student->save()) {
-                return redirect('student/index')->with('success', '修改成功-' . $id);
+                return redirect('student/lists')->with('success', '修改成功-' . $id);
             }
         }
 
@@ -186,9 +186,9 @@ class StudentController extends Controller
         $student = Student::find($id);
 
         if ($student->delete()) {
-            return redirect('student/index')->with('success', '删除成功-' . $id);
+            return redirect('student/lists')->with('success', '删除成功-' . $id);
         } else {
-            return redirect('student/index')->with('error', '删除失败-' . $id);
+            return redirect('student/lists')->with('error', '删除失败-' . $id);
         }
     }
 
